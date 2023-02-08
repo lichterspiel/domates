@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4427EBC2993BC6C0023D3C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4427EBB2993BC6C0023D3C9 /* AppDelegate.swift */; };
+		A4427EC02993BD120023D3C9 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4427EBF2993BD120023D3C9 /* PopoverView.swift */; };
+		A4427EC22993BE110023D3C9 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4427EC12993BE110023D3C9 /* StatusBarController.swift */; };
+		A4427EC42993DDB60023D3C9 /* DomatesTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4427EC32993DDB60023D3C9 /* DomatesTimer.swift */; };
 		A4F95C7E29832E1100717E9E /* domatesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F95C7D29832E1100717E9E /* domatesApp.swift */; };
 		A4F95C8029832E1100717E9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F95C7F29832E1100717E9E /* ContentView.swift */; };
 		A4F95C8229832E1400717E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4F95C8129832E1400717E9E /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A4427EBB2993BC6C0023D3C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A4427EBF2993BD120023D3C9 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		A4427EC12993BE110023D3C9 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		A4427EC32993DDB60023D3C9 /* DomatesTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomatesTimer.swift; sourceTree = "<group>"; };
 		A4F95C7A29832E1100717E9E /* domates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = domates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F95C7D29832E1100717E9E /* domatesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = domatesApp.swift; sourceTree = "<group>"; };
 		A4F95C7F29832E1100717E9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4427EBA2993BC5A0023D3C9 /* Menubar */ = {
+			isa = PBXGroup;
+			children = (
+				A4427EBB2993BC6C0023D3C9 /* AppDelegate.swift */,
+				A4427EC12993BE110023D3C9 /* StatusBarController.swift */,
+			);
+			path = Menubar;
+			sourceTree = "<group>";
+		};
 		A4F95C7129832E1100717E9E = {
 			isa = PBXGroup;
 			children = (
@@ -40,6 +57,7 @@
 				A4F95C7B29832E1100717E9E /* Products */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		A4F95C7B29832E1100717E9E /* Products */ = {
 			isa = PBXGroup;
@@ -52,8 +70,11 @@
 		A4F95C7C29832E1100717E9E /* domates */ = {
 			isa = PBXGroup;
 			children = (
+				A4427EBA2993BC5A0023D3C9 /* Menubar */,
 				A4F95C7D29832E1100717E9E /* domatesApp.swift */,
 				A4F95C7F29832E1100717E9E /* ContentView.swift */,
+				A4427EBF2993BD120023D3C9 /* PopoverView.swift */,
+				A4427EC32993DDB60023D3C9 /* DomatesTimer.swift */,
 				A4F95C8129832E1400717E9E /* Assets.xcassets */,
 				A4F95C8629832E1400717E9E /* domates.entitlements */,
 				A4F95C8329832E1400717E9E /* Preview Content */,
@@ -139,7 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4427EBC2993BC6C0023D3C9 /* AppDelegate.swift in Sources */,
 				A4F95C8029832E1100717E9E /* ContentView.swift in Sources */,
+				A4427EC02993BD120023D3C9 /* PopoverView.swift in Sources */,
+				A4427EC42993DDB60023D3C9 /* DomatesTimer.swift in Sources */,
+				A4427EC22993BE110023D3C9 /* StatusBarController.swift in Sources */,
 				A4F95C7E29832E1100717E9E /* domatesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +297,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"domates/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,6 +323,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"domates/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

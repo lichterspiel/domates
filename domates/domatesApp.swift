@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct domatesApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    init(){
+        AppDelegate.shared = appDelegate
+    }
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        Settings {
+            EmptyView()
         }
     }
 }
+
