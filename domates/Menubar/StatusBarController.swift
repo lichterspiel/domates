@@ -6,32 +6,36 @@
 //
 
 import AppKit
+import SwiftUI
+import Foundation
 
 class StatusBarController {
-    private var statusBar: NSStatusBar
+    //private var statusBar: NSStatusBar
     
     private(set) var statusItem: NSStatusItem
     private(set) var popover: NSPopover
     
-    private var title:NSAttributedString?
+    private var title: NSAttributedString?
     
     init(_ popover: NSPopover){
         self.popover = popover
-        statusBar = .init()
+        //statusBar = .init()
+        //statusItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
         
-        statusItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         
         if let button = statusItem.button {
-            button.image = NSImage(systemSymbolName: "house", accessibilityDescription: "house")
-            button.action = #selector(showApp(sender:))
             button.imagePosition = .imageLeft
+            button.image = NSImage(systemSymbolName: "leaf.fill", accessibilityDescription: "domates timer")
+            button.action = #selector(showApp(sender:))
             button.target = self
         }
     }
     
     func setTitle(_ t: String){
         let title = NSAttributedString(
-            string: " \(t)"
+            string: !t.isEmpty ? " \(t)" : "",
+            attributes: [NSAttributedString.Key.font: NSFont.monospacedSystemFont(ofSize: 12, weight: NSFont.Weight.regular)]
         )
         statusItem.button?.attributedTitle = title
     }
