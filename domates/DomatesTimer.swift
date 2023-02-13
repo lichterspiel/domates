@@ -16,6 +16,7 @@ class DomatesTimer: ObservableObject {
     private var timer: Timer?
     
     
+    @Published private(set) var isPaused: Bool = false
     @Published public var elapsedSeconds: Int = 0
     @Published public var elapsedRounds: Int = 0
     @Published public var isRunning: Bool = false
@@ -41,7 +42,6 @@ class DomatesTimer: ObservableObject {
         else {
             self.stopTimer()
             self.elapsedRounds = 0
-            isRunning = false
         }
     }
     
@@ -56,6 +56,10 @@ class DomatesTimer: ObservableObject {
         AppDelegate.shared.statusBar?.setTitle(timeString)
         
         self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ timer in
+            if self.isPaused{
+                return
+            }
+            
             self.elapsedSeconds += 1
             
             let timeString = String(
@@ -79,8 +83,13 @@ class DomatesTimer: ObservableObject {
         self.timer?.invalidate()
         self.timer = nil
         self.elapsedSeconds = 0
+        self.isRunning = false
         
         AppDelegate.shared.statusBar?.setTitle("")
+    }
+    
+    public func togglePause(){
+        self.isPaused = !self.isPaused
     }
     
     public func setStudyIntervall(intervall: Int){

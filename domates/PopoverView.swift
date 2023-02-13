@@ -19,25 +19,50 @@ struct PopoverView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Button(action: {
-                if timer.elapsedSeconds == 0{
-                    timer.startTimer()
-                }
-                else{
+            HStack {
+                Button(action: {
+                    if timer.elapsedSeconds == 0{
+                        timer.startTimer()
+                        AppDelegate.shared.statusBar?.popover.performClose(nil)
+                    }
+                    else{
+                        timer.togglePause()
+                    }
+                }, label: {
+                    if !timer.isRunning {
+                        Text("Start")
+                        .frame(maxWidth: .infinity)
+                    }
+                    else if timer.isPaused {
+                        Text("Resume")
+                        .frame(maxWidth: .infinity)
+                    }
+                    else {
+                        Text("Pause")
+                        .frame(maxWidth: .infinity)
+                    }
+                })
+                .buttonStyle(.borderedProminent)
+                .tint(.accentColor)
+                .controlSize(.large)
+                
+                Spacer()
+                
+                Button(action: {
                     timer.stopTimer()
-                }
-            }, label: {
-                if timer.elapsedSeconds == 0{
-                    Text("Start")
-                    .frame(maxWidth: .infinity)
-                }
-                else {
+                    if timer.isPaused {
+                        timer.togglePause()
+                    }
+                }, label: {
                     Text("Stop")
                     .frame(maxWidth: .infinity)
-                }
-            })
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
+                   
+                })
+                .buttonStyle(.borderedProminent)
+                .tint(.purple)
+                .controlSize(.large)
+                .disabled(!timer.isRunning)
+            }
             
             Text("Time in Minutes")
                 .frame(maxWidth: .infinity)
