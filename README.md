@@ -5,7 +5,7 @@ written in Swift.
 ![Domates](domates.png)
 
 # Functionality
-Basic Pomodoro Timer with adjustable study,pause durations and adjustable round count
+Basic Pomodoro Timer with adjustable study,pause durations and round count
 
 # Planned
 - Pausing
